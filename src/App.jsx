@@ -6,7 +6,7 @@ export default function App() {
     <>
     <Navbar />
       <Container sx={{ mt: 5 }}>
-
+        <h1>Home</h1>
       </Container>
     </>
   )
