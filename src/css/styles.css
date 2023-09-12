@@ -1,0 +1,12 @@
+body{
+    margin:0;
+    padding:0;
+    width: 100%;    
+ }
+
+ 
+ .divPrincipal{
+    background-image: url('public/img/fondo.jpg');
+    background-size: cover; 
+    background-repeat: repeat;
+ }

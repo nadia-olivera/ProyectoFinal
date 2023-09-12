@@ -13,19 +13,25 @@ export default function Navbar() {
 
     const [open, setOpen] = useState(false);
 
+    const styles = {
+        appBar: {
+            background: 'linear-gradient(to right, #2ea67b, #186a4e)',
+        },
+    };
+
     return (
         <>
-            <AppBar position="fixed" sx={{ bgcolor: "black" }}>
+            <AppBar position="fixed" sx={styles.appBar}>
                 <Toolbar>
                     <IconButton onClick={() => setOpen(true)}
-                        color="inherit"
+                        color="black"
                         size="large"
                     >
                         <MenuIcon />
                     </IconButton>
                     <Typography
                         variant="h6"
-                        sx={{ flexGrow: 1 }}
+                        sx={{ flexGrow: 1, color: "black" }}
                     >Categorías</Typography>
                     <InputBase placeholder="Buscar..."
                         sx={{
@@ -33,33 +39,43 @@ export default function Navbar() {
                             marginRight: 1,
                             paddingLeft: 1,
                             borderRadius: 5,
-                            borderWidth:2,
+                            borderWidth: 2,
                             borderStyle: 'solid',
-                            borderColor:'#16FF00',
-                            backgroundColor: 'rgba(255, 255, 255, 0.2)',
-                            width:250,
-                            height:37
+                            borderColor: '#2ea67b',
+                            backgroundColor: 'black',
+                            width: 250,
+                            height: 35,
+                            '&:hover': {
+                                bgcolor: "black",
+                                color: "white",
+                                borderStyle: 'solid',
+                                borderWidth:2,
+                                borderColor: 'lime'
+                            },
                         }}
                         endAdornment={
                             <SearchIcon
-                              sx={{
-                                color: '#16FF00',
-                                marginRight: 1,
-                              }}
+                                sx={{
+                                    color: 'white',
+                                    marginRight: 1,
+                                }}
                             />
-                          }
-                        />           
-                    <Button variant="h1"
+                        }
+                    />
+                    <Button
                         sx={{
-                            bgcolor: "#16FF00",
-                            color: "black",
+                            bgcolor: "black",
+                            color: "white",
                             gap: 0.5,
                             borderRadius: 5,
                             letterSpacing: 1,
                             fontWeight: "bold",
                             '&:hover': {
-                                bgcolor: "green",
-                                color: "black",
+                                bgcolor: "black",
+                                borderColor: 'lime',                                
+                                borderStyle: 'solid',
+                                borderWidth:2
+                                
                             },
                         }}>
                         <AccountCircleOutlinedIcon />
@@ -67,13 +83,13 @@ export default function Navbar() {
                     </Button>
 
                     <Button sx={{
-                        color: "#16FF00", '&:hover': {
-                            color: "green",
+                        color: "black", '&:hover': {
+                            color: "lime",
                         },
                     }}><FavoriteBorderIcon /></Button>
                     <Button sx={{
-                        color: "#16FF00", '&:hover': { // Estilos al pasar el mouse sobre el botón
-                            color: "green", // Cambiar el color del texto al pasar el mouse
+                        color: "black", '&:hover': { 
+                            color: "lime", 
                         },
                     }}><ShoppingCartOutlinedIcon /></Button>
                 </Toolbar>
