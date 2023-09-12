@@ -1,10 +1,11 @@
-import { AppBar, Box, Button, Drawer, IconButton, InputBase, Toolbar, Typography } from "@mui/material";
+import { AppBar, Button, Drawer, IconButton, InputBase, Toolbar, Typography } from "@mui/material";
 import NavListDrawer from "./NavListDrawer";
 import MenuIcon from '@mui/icons-material/Menu';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import SearchIcon from '@mui/icons-material/Search';
+import "../css/styles.css"
 import { useState } from "react";
 
 
@@ -23,6 +24,7 @@ export default function Navbar() {
         <>
             <AppBar position="fixed" sx={styles.appBar}>
                 <Toolbar>
+                    <img className="logo" src="./img/logo.jpg"></img>
                     <IconButton onClick={() => setOpen(true)}
                         color="black"
                         size="large"
@@ -31,8 +33,8 @@ export default function Navbar() {
                     </IconButton>
                     <Typography
                         variant="h6"
-                        sx={{ flexGrow: 1, color: "black" }}
-                    >Categorías</Typography>
+                        sx={{ flexGrow: 1, color: "black",fontSize:18 }}
+                    >Menú</Typography>
                     <InputBase placeholder="Buscar..."
                         sx={{
                             color: 'white',
@@ -68,8 +70,8 @@ export default function Navbar() {
                             color: "white",
                             gap: 0.5,
                             borderRadius: 5,
-                            letterSpacing: 1,
                             fontWeight: "bold",
+                            textTransform: 'lowercase',
                             '&:hover': {
                                 bgcolor: "black",
                                 borderColor: 'lime',                                
@@ -79,7 +81,7 @@ export default function Navbar() {
                             },
                         }}>
                         <AccountCircleOutlinedIcon />
-                        INGRESAR
+                        Ingresar
                     </Button>
 
                     <Button sx={{

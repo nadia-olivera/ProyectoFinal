@@ -25,7 +25,7 @@ export default function Product() {
           </Typography>          
         </CardContent>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <Button variant="contained" startIcon={<AddShoppingCartIcon  />} sx={{mb: 1}}>
+        <Button variant="contained" startIcon={<AddShoppingCartIcon  />} sx={{mb: 1,bgcolor:"black"}}>
             Agregar al carrito
           </Button>
         </div>
@@ -52,7 +52,7 @@ export default function Product() {
           </Typography>          
         </CardContent>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <Button variant="contained" startIcon={<AddShoppingCartIcon  />} sx={{mb: 1}}>
+        <Button variant="contained" startIcon={<AddShoppingCartIcon  />} sx={{mb: 1,bgcolor:"black"}}>
             Agregar al carrito
           </Button>
         </div>
@@ -79,7 +79,7 @@ export default function Product() {
           </Typography>          
         </CardContent>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <Button variant="contained" startIcon={<AddShoppingCartIcon  />} sx={{mb: 1}}>
+        <Button variant="contained" startIcon={<AddShoppingCartIcon  />} sx={{mb: 1,bgcolor:"black"}}>
             Agregar al carrito
           </Button>
         </div>
@@ -106,7 +106,7 @@ export default function Product() {
           </Typography>          
         </CardContent>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <Button variant="contained" startIcon={<AddShoppingCartIcon  />} sx={{mb: 1}}>
+        <Button variant="contained" startIcon={<AddShoppingCartIcon  />} sx={{mb: 1,bgcolor:"black"}}>
             Agregar al carrito
           </Button>
         </div>
