@@ -1,13 +1,14 @@
 import { Rating, Typography, CardMedia, CardContent, CardActionArea, Card,Button, Grid } from '@mui/material';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import "../css/styles.css"
 
 export default function Product() {
   return (
     <>
-    <Grid container spacing={1}>
+    <Grid container spacing={3}>
       <Grid item xs={12} sm={6} md={3}>
-    <Card sx={{ width: 285}}>
-      <CardActionArea sx={{ width: 285}}>
+    <Card className="card" sx={{ width: 285, color:"white"}}>
+      <CardActionArea  sx={{ width: 285}}>
         <CardMedia
           component="img"
           alt="Producto"
@@ -25,7 +26,7 @@ export default function Product() {
           </Typography>          
         </CardContent>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <Button variant="contained" startIcon={<AddShoppingCartIcon  />} sx={{mb: 1,bgcolor:"black"}}>
+        <Button variant="contained" startIcon={<AddShoppingCartIcon  />} sx={{mb: 1,bgcolor:"#186a4e"}}>
             Agregar al carrito
           </Button>
         </div>
@@ -33,7 +34,7 @@ export default function Product() {
     </Card>
     </Grid>
     <Grid item xs={12} sm={6} md={3}>
-    <Card sx={{ width: 285 }}>
+    <Card className="card" sx={{ width: 285, color:"white" }}>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -52,7 +53,7 @@ export default function Product() {
           </Typography>          
         </CardContent>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <Button variant="contained" startIcon={<AddShoppingCartIcon  />} sx={{mb: 1,bgcolor:"black"}}>
+        <Button variant="contained" startIcon={<AddShoppingCartIcon  />} sx={{mb: 1,bgcolor:"#186a4e"}}>
             Agregar al carrito
           </Button>
         </div>
@@ -60,7 +61,7 @@ export default function Product() {
     </Card>
     </Grid>
     <Grid item xs={12} sm={6} md={3}>
-    <Card sx={{ width: 285}}>
+    <Card className="card" sx={{ width: 285, color:"white"}}>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -79,7 +80,7 @@ export default function Product() {
           </Typography>          
         </CardContent>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <Button variant="contained" startIcon={<AddShoppingCartIcon  />} sx={{mb: 1,bgcolor:"black"}}>
+        <Button variant="contained" startIcon={<AddShoppingCartIcon  />} sx={{mb: 1,bgcolor:"#186a4e"}}>
             Agregar al carrito
           </Button>
         </div>
@@ -87,7 +88,7 @@ export default function Product() {
     </Card>
     </Grid>
     <Grid item xs={12} sm={6} md={3}>
-    <Card sx={{ width: 285}}>
+    <Card className="card" sx={{ width: 285, color:"white"}}>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -106,7 +107,7 @@ export default function Product() {
           </Typography>          
         </CardContent>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <Button variant="contained" startIcon={<AddShoppingCartIcon  />} sx={{mb: 1,bgcolor:"black"}}>
+        <Button variant="contained" startIcon={<AddShoppingCartIcon  />} sx={{mb: 1,bgcolor:"#186a4e"}}>
             Agregar al carrito
           </Button>
         </div>
