@@ -34,7 +34,7 @@ export default function Navbar() {
                     <Typography
                         variant="h6"
                         sx={{ flexGrow: 1, color: "black",fontSize:18 }}
-                    >Menú</Typography>
+                    >Categorias</Typography>
                     <InputBase placeholder="Buscar..."
                         sx={{
                             color: 'white',

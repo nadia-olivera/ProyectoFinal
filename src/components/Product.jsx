@@ -13,7 +13,7 @@ export default function Product() {
           component="img"
           alt="Producto"
           height="max-content"
-          image="\img\producto1.webp"
+          image="\img\producto1.png"
           title="Batidora"
         />
         <CardContent sx={{width: 285, height:100}}>
@@ -40,7 +40,7 @@ export default function Product() {
           component="img"
           alt="Producto"
           height="max-content"
-          image="\img\producto2.webp"
+          image="\img\producto1.png"
           title="Batidora"
         />
         <CardContent sx={{width: 285, height:100}}>
