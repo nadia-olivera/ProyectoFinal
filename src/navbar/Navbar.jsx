@@ -1,4 +1,4 @@
-import { AppBar, Button, Drawer, IconButton, InputBase, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box, Button, Drawer, IconButton, InputBase, Toolbar, Typography } from "@mui/material";
 import NavListDrawer from "./NavListDrawer";
 import MenuIcon from '@mui/icons-material/Menu';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
@@ -24,8 +24,10 @@ export default function Navbar() {
         <>
             <AppBar position="fixed" sx={styles.appBar}>
                 <Toolbar>
-                    <img className="logo" src="./img/logo.jpg"></img>
-                    <IconButton onClick={() => setOpen(true)}
+                    <Box sx={{ flexGrow: 1}}>
+                    <img className="logo" src="./img/logo.png"></img>
+                    </Box>                    
+                    {/* <IconButton onClick={() => setOpen(true)}
                         color="black"
                         size="large"
                     >
@@ -34,7 +36,7 @@ export default function Navbar() {
                     <Typography
                         variant="h6"
                         sx={{ flexGrow: 1, color: "black",fontSize:18 }}
-                    >Categorias</Typography>
+                    >Categorias</Typography> */}
                     <InputBase placeholder="Buscar..."
                         sx={{
                             color: 'white',

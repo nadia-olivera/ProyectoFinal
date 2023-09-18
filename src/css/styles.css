@@ -24,3 +24,28 @@ body{
     border-width: 20px;
     border: solid  #186a4e;
  }
+
+
+ .css-11pfdl1-MuiButtonBase-root-MuiTab-root.Mui-selected {
+   color: #2ea67b !important;
+   
+   
+   
+}
+
+
+.css-11pfdl1-MuiButtonBase-root-MuiTab-root{
+   text-transform: none !important;
+   letter-spacing: 0 !important;
+   max-width: 280px !important;
+}
+
+.MuiSvgIcon-fontSizeMedium{
+   color: #2ea67b !important;
+}
+
+
+
+.MuiTabs-indicator {
+   background-color: #2ea67b !important;
+}

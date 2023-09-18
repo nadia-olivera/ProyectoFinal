@@ -3,6 +3,7 @@ import Navbar from "./navbar/Navbar";
 import Product from "./components/Product";
 import Footer from "./components/Footer";
 import "./css/styles.css"
+import NavCategories from "./navbar/NavCategories";
 
 
 export default function App() {
@@ -10,6 +11,7 @@ export default function App() {
     <>
     
     <Navbar />
+    <NavCategories/>
     <div className="divPrincipal" style={{
                 
                 // background: 'linear-gradient(to bottom, black, grey)',
@@ -19,10 +21,12 @@ export default function App() {
                 width:"100%",
                 color:"white"
                 
-            }}>           
-    <Container sx={{ mt: 8 ,overflowX:"hidden"}}>
+            }}>
+    
+    <Container sx={{overflowX:"hidden"}}>
+    
         <Box variant="h2" sx={{borderBottom:5,borderColor:"#2ea67b",fontSize:30, mt:5,mb:5}}>Productos destacados</Box>
-        <Product />        
+        <Product />              
       </Container>
       </div>
       <Footer />
