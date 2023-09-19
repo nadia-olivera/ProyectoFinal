@@ -25,14 +25,21 @@ body{
     border: solid  #186a4e;
  }
 
-
+/* Estilos del Navbar de Categorias */
  .css-11pfdl1-MuiButtonBase-root-MuiTab-root.Mui-selected {
-   color: #2ea67b !important;
-   
-   
-   
+   color: #2ea67b !important;   
 }
 
+.tab-container{
+   overflow-x: auto; /* Agrega una barra de desplazamiento horizontal si es necesario */
+   width: 100%; /* Asigna un ancho al contenedor */
+}
+
+
+.tab{
+   display: flex; /* Asegura que los tabs se muestren en línea */
+   width: max-content; /* Establece el ancho del contenedor de tabs al máximo posible */  
+}
 
 .css-11pfdl1-MuiButtonBase-root-MuiTab-root{
    text-transform: none !important;
@@ -42,6 +49,20 @@ body{
 
 .MuiSvgIcon-fontSizeMedium{
    color: #2ea67b !important;
+}
+
+.MuiSvgIcon-fontSizeMedium:hover{
+   color: lime !important;
+}
+
+.tabPanel{
+   /* background-color: #2ea67b; */
+   background-image: url('public/img/fondo.png');
+   color: white;
+   /* border-top:solid;
+   border-bottom:solid; */
+   /* border-color: white; */
+   opacity: 0.8;
 }
 
 
