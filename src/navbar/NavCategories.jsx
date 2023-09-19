@@ -91,6 +91,9 @@ export default function NavCategories() {
     }}>
       <div className='tab-container'>
       <Tabs className='tab'  sx={{ bgcolor: 'black' }} value={value} onChange={handleChange} aria-label="icon label tabs example">
+        <Tab sx={{ color: "white" }} icon={<VolumeUpIcon />} label="Audio, DJ e iluminación" {...a11yProps(0)} />
+        <Tab sx={{ color: "white" }} icon={<FireplaceIcon />} label="Calefactores " {...a11yProps(1)} />
+        <Tab sx={{ color: "white" }} icon={<SmartToyIcon />} label="Juguetería " {...a11yProps(2)} />
         <Tab sx={{ color: "white" }} icon={<VolumeUpIcon />} label="Audio, DJ e iluminación" {...a11yProps(0)} onClick={() => handleTabClick(0)} />
         <Tab sx={{ color: "white" }} icon={<FireplaceIcon />} label="Calefactores " {...a11yProps(1)} onClick={() => handleTabClick(1)} />
         <Tab sx={{ color: "white" }} icon={<SmartToyIcon />} label="Juguetería " {...a11yProps(2)} />
