@@ -50,11 +50,27 @@ function a11yProps(index) {
 
 
 export default function NavCategories() {
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(-1);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  const handleDocumentClick = (event) => {
+    const tabContainer = document.querySelector('.tab-container');
+    if (!tabContainer.contains(event.target)) {
+      // If click is outside tab container, close all tabs
+      setValue(-1);
+    }
+  };
+
+  // Attach click event listener to document for handling clicks outside tabs
+  React.useEffect(() => {
+    document.addEventListener('click', handleDocumentClick);
+    return () => {
+      document.removeEventListener('click', handleDocumentClick);
+    };
+  }, []);
 
 
 
@@ -216,43 +232,5 @@ export default function NavCategories() {
       </CustomTabPanel>
     </div>
   );
-
-
 }
-
-// Selecciona todos los tabs y sus respectivos contenidos
-const tabs = document.querySelectorAll('.tab');
-const tabContents = document.querySelectorAll('.tabPanel');
-
-// Agrega un evento de clic a cada tab
-tabs.forEach(function(tab, index) {
-  tab.addEventListener('click', function(event) {
-    // Oculta todos los tabContents
-    tabContents.forEach(function(content) {
-      content.style.display = 'none';
-    });
-
-    // Muestra u oculta el tabContent correspondiente
-    const tabContent = tabContents[index];
-    tabContent.style.display = tabContent.style.display === 'none' ? 'block' : 'none';
-  });
-});
-
-// Agrega un eventListener al documento para escuchar los clics
-document.addEventListener('click', function(event) {
-  const tabContainer = document.querySelector('.tabPanel');
-  
-  // Verifica si el clic no fue dentro del contenedor de tabs
-  if (!tabContainer.contains(event.target)) {
-    // Oculta todos los tabContent
-    tabContents.forEach(function(content) {
-      content.style.display = 'none';
-    });
-  }
-});
-
-
-
-
-
 
