@@ -12,7 +12,7 @@ import LaptopChromebookIcon from '@mui/icons-material/LaptopChromebook';
 import SolarPowerIcon from '@mui/icons-material/SolarPower';
 import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices';
 import SmartToyIcon from '@mui/icons-material/SmartToy';
-import { Stack,Box,List, ListItem, ListItemText, Typography,Divider, Grid } from '@mui/material';
+import { Box,List, ListItem, ListItemText, Typography,Divider, Grid } from '@mui/material';
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -52,19 +52,25 @@ function a11yProps(index) {
 export default function NavCategories() {
   const [value, setValue] = React.useState(-1);
 
+  React.useEffect(() => {
+    setValue(-1);
+  }, []);
+
   const handleChange = (event, newValue) => {
-    setValue(newValue);
+    setValue(newValue === value ? -1 : newValue);
   };
 
   const handleDocumentClick = (event) => {
     const tabContainer = document.querySelector('.tab-container');
     if (!tabContainer.contains(event.target)) {
-      // If click is outside tab container, close all tabs
       setValue(-1);
     }
   };
 
-  // Attach click event listener to document for handling clicks outside tabs
+  const handleTabClick = (index) => {
+    setValue((prevValue) => (prevValue === index ? -1 : index));
+  };
+
   React.useEffect(() => {
     document.addEventListener('click', handleDocumentClick);
     return () => {
@@ -85,9 +91,9 @@ export default function NavCategories() {
     }}>
       <div className='tab-container'>
       <Tabs className='tab'  sx={{ bgcolor: 'black' }} value={value} onChange={handleChange} aria-label="icon label tabs example">
-        <Tab sx={{ color: "white" }} icon={<VolumeUpIcon />} label="Audio, DJ e iluminación" {...a11yProps(0)} />
-        <Tab sx={{ color: "white" }} icon={<FireplaceIcon />} label="Calefactores " {...a11yProps(1)} />
-        <Tab sx={{ color: "white" }} icon={<SmartToyIcon />} label="Jugetería " {...a11yProps(2)} />
+        <Tab sx={{ color: "white" }} icon={<VolumeUpIcon />} label="Audio, DJ e iluminación" {...a11yProps(0)} onClick={() => handleTabClick(0)} />
+        <Tab sx={{ color: "white" }} icon={<FireplaceIcon />} label="Calefactores " {...a11yProps(1)} onClick={() => handleTabClick(1)} />
+        <Tab sx={{ color: "white" }} icon={<SmartToyIcon />} label="Juguetería " {...a11yProps(2)} />
         <Tab sx={{ color: "white" }} icon={<BlenderIcon />} label="Electrodomésticos" {...a11yProps(3)} />
         <Tab sx={{ color: "white" }} icon={<PianoIcon />} label="Instrumentos Musicales y Acc" {...a11yProps(4)} />
         <Tab sx={{ color: "white" }} icon={<TapAndPlayIcon />} label="Celulares" {...a11yProps(5)} />
@@ -210,7 +216,22 @@ export default function NavCategories() {
         </List>
       </CustomTabPanel>
       <CustomTabPanel className="tabPanel" value={value} index={4}>
-        Item Three
+      <List>
+         <Grid container spacing={2}>
+          <Grid item xs={6} md={4}>
+          <PianoIcon sx={{ fontSize: 200 }} />
+          </Grid>
+          <Grid item  xs={6} md={8}>
+          <ListItem button>
+          <ListItemText  primary="Instrumentos" />
+          </ListItem>
+          <Divider sx={{ bgcolor: "white" }} />
+          <ListItem button>
+          <ListItemText  primary="Accesorios" />
+          </ListItem>          
+          </Grid>
+          </Grid>          
+        </List>
       </CustomTabPanel>
       <CustomTabPanel className="tabPanel" value={value} index={5}>
         Item Three
