@@ -60,16 +60,30 @@ export default function NavCategories() {
     setValue(newValue === value ? -1 : newValue);
   };
 
-  const handleDocumentClick = (event) => {
+  const isClickInsideTab = (event) => {
     const tabContainer = document.querySelector('.tab-container');
-    if (!tabContainer.contains(event.target)) {
+    return tabContainer.contains(event.target);
+  };
+
+  const isClickInsideTabPanel = (event) => {
+    const tabPanels = document.querySelectorAll('.tabPanel');
+    for (let i = 0; i < tabPanels.length; i++) {
+      if (tabPanels[i].contains(event.target)) {
+        return true;
+      }
+    }
+    return false;
+  };
+  
+  const handleDocumentClick = (event) => {
+    const isClickInsideTabContainer = isClickInsideTab(event);
+    const isClickInsidePanel = isClickInsideTabPanel(event);
+  
+    if (!isClickInsideTabContainer && !isClickInsidePanel) {
       setValue(-1);
     }
   };
-
-  const handleTabClick = (index) => {
-    setValue((prevValue) => (prevValue === index ? -1 : index));
-  };
+  
 
   React.useEffect(() => {
     document.addEventListener('click', handleDocumentClick);
@@ -91,11 +105,8 @@ export default function NavCategories() {
     }}>
       <div className='tab-container'>
       <Tabs className='tab'  sx={{ bgcolor: 'black' }} value={value} onChange={handleChange} aria-label="icon label tabs example">
-        <Tab sx={{ color: "white" }} icon={<VolumeUpIcon />} label="Audio, DJ e iluminación" {...a11yProps(0)} />
-        <Tab sx={{ color: "white" }} icon={<FireplaceIcon />} label="Calefactores " {...a11yProps(1)} />
-        <Tab sx={{ color: "white" }} icon={<SmartToyIcon />} label="Juguetería " {...a11yProps(2)} />
-        <Tab sx={{ color: "white" }} icon={<VolumeUpIcon />} label="Audio, DJ e iluminación" {...a11yProps(0)} onClick={() => handleTabClick(0)} />
-        <Tab sx={{ color: "white" }} icon={<FireplaceIcon />} label="Calefactores " {...a11yProps(1)} onClick={() => handleTabClick(1)} />
+        <Tab sx={{ color: "white" }} icon={<VolumeUpIcon />} label="Audio, DJ e iluminación" {...a11yProps(0)}/>
+        <Tab sx={{ color: "white" }} icon={<FireplaceIcon />} label="Calefactores " {...a11yProps(1)}/>
         <Tab sx={{ color: "white" }} icon={<SmartToyIcon />} label="Juguetería " {...a11yProps(2)} />
         <Tab sx={{ color: "white" }} icon={<BlenderIcon />} label="Electrodomésticos" {...a11yProps(3)} />
         <Tab sx={{ color: "white" }} icon={<PianoIcon />} label="Instrumentos Musicales y Acc" {...a11yProps(4)} />
@@ -237,22 +248,126 @@ export default function NavCategories() {
         </List>
       </CustomTabPanel>
       <CustomTabPanel className="tabPanel" value={value} index={5}>
-        Item Three
-      </CustomTabPanel>
-      <CustomTabPanel className="tabPanel" value={value} index={5}>
-        Item Three
+      <List>
+         <Grid container spacing={2}>
+          <Grid item xs={6} md={4}>
+          <TapAndPlayIcon sx={{ fontSize: 200 }} />
+          </Grid>
+          <Grid item  xs={6} md={8}>
+          <ListItem button>
+          <ListItemText  primary="Hyundai" />
+          </ListItem>
+          <Divider sx={{ bgcolor: "white" }} />
+          <ListItem button>
+          <ListItemText  primary="Epik" />
+          </ListItem>
+          <Divider sx={{ bgcolor: "white" }} />
+          <ListItem button>
+          <ListItemText  primary="Samusng" />
+          </ListItem>
+          <Divider sx={{ bgcolor: "white" }} />
+          <ListItem button>
+          <ListItemText  primary="Xiaomi" />
+          </ListItem>
+          <Divider sx={{ bgcolor: "white" }} />
+          <ListItem button>
+          <ListItemText  primary="Iphone" />
+          </ListItem>
+          <Divider sx={{ bgcolor: "white" }} />
+          <ListItem button>
+          <ListItemText  primary="Outlet" />
+          </ListItem>
+          </Grid>
+          </Grid>          
+        </List>
       </CustomTabPanel>
       <CustomTabPanel className="tabPanel" value={value} index={6}>
-        Item Three
+      <List>
+         <Grid container spacing={2}>
+          <Grid item xs={6} md={4}>
+          <LaptopChromebookIcon sx={{ fontSize: 200 }} />
+          </Grid>
+          <Grid item  xs={6} md={8}>
+          <ListItem button>
+          <ListItemText  primary="Notebook" />
+          </ListItem>
+          <Divider sx={{ bgcolor: "white" }} />
+          <ListItem button>
+          <ListItemText  primary="Equipos" />
+          </ListItem>
+          <Divider sx={{ bgcolor: "white" }} />
+          <ListItem button>
+          <ListItemText  primary="Tablet" />
+          </ListItem>
+          </Grid>
+          </Grid>          
+        </List>
       </CustomTabPanel>
       <CustomTabPanel className="tabPanel" value={value} index={7}>
-        Item Three
+      <List>
+         <Grid container spacing={2}>
+          <Grid item xs={6} md={4}>
+          <HeadsetMicIcon sx={{ fontSize: 200 }} />
+          </Grid>
+          <Grid item  xs={6} md={8}>
+          <ListItem button>
+          <ListItemText  primary="Auriculares" />
+          </ListItem>
+          <Divider sx={{ bgcolor: "white" }} />
+          <ListItem button>
+          <ListItemText  primary="Cables y Adaptadores" />
+          </ListItem>
+          <Divider sx={{ bgcolor: "white" }} />
+          <ListItem button>
+          <ListItemText  primary="Cargadores" />
+          </ListItem>
+          <Divider sx={{ bgcolor: "white" }} />
+          <ListItem button>
+          <ListItemText  primary="Memorias" />
+          </ListItem>
+          <Divider sx={{ bgcolor: "white" }} />
+          <ListItem button>
+          <ListItemText  primary="Para Autos" />
+          </ListItem>
+          <Divider sx={{ bgcolor: "white" }} />
+          <ListItem button>
+          <ListItemText  primary="Teléfono fijo" />
+          </ListItem>
+          <Divider sx={{ bgcolor: "white" }} />
+          <ListItem button>
+          <ListItemText  primary="Varios" />
+          </ListItem>
+          </Grid>
+          </Grid>          
+        </List>
       </CustomTabPanel>
       <CustomTabPanel className="tabPanel" value={value} index={8}>
-        Item Three
+      <List>
+         <Grid container spacing={2}>
+          <Grid item xs={6} md={4}>
+          <SolarPowerIcon sx={{ fontSize: 200 }} />
+          </Grid>
+          <Grid item  xs={6} md={8}>
+          <ListItem button>
+          <ListItemText  primary="Solar" />
+          </ListItem>          
+          </Grid>
+          </Grid>          
+        </List>
       </CustomTabPanel>
       <CustomTabPanel className="tabPanel" value={value} index={9}>
-        Item Three
+      <List>
+         <Grid container spacing={2}>
+          <Grid item xs={6} md={4}>
+          <MiscellaneousServicesIcon sx={{ fontSize: 200 }} />
+          </Grid>
+          <Grid item  xs={6} md={8}>
+          <ListItem button>
+          <ListItemText  primary="Arreglo de Celulares" />
+          </ListItem>          
+          </Grid>
+          </Grid>          
+        </List>
       </CustomTabPanel>
     </div>
   );
