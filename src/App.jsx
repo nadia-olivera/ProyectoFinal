@@ -12,7 +12,7 @@ export default function App() {
     
     <Navbar />
     <NavCategories/>
-    <div className="divPrincipal" style={{
+    <div style={{
                 
                 // background: 'linear-gradient(to bottom, black, grey)',
                 height:1000,

@@ -1,14 +1,11 @@
 body{
-    margin:0;
-    padding:0;
-    width: 100%;    
- }
-
- 
- .divPrincipal{
     background-image: url('public/img/fondo.png');
     background-size: cover; 
     background-repeat: repeat;
+    margin:0;
+    padding:0;
+    width: 100%;   
+    font-family: Gill Sans, sans-serif; 
  }
 
  .logo{
@@ -31,14 +28,14 @@ body{
 }
 
 .tab-container{
-   overflow-x: auto; /* Agrega una barra de desplazamiento horizontal si es necesario */
-   width: 100%; /* Asigna un ancho al contenedor */
+   overflow-x: auto; 
+   width: 100%; 
 }
 
 
 .tab{
-   display: flex; /* Asegura que los tabs se muestren en línea */
-   width: max-content; /* Establece el ancho del contenedor de tabs al máximo posible */  
+   display: flex; 
+   width: max-content;  
 }
 
 .css-11pfdl1-MuiButtonBase-root-MuiTab-root{
@@ -69,4 +66,17 @@ body{
 
 .MuiTabs-indicator {
    background-color: #2ea67b !important;
+}
+
+/* Estilos del Mapa */
+
+.mapa{
+   width: 400px;
+   height: 300px;
+   border-radius: 5px;
+}
+
+.leaflet-marker-icon{
+   width: 35px !important;
+   height:35px !important;
 }

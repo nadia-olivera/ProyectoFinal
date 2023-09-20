@@ -1,6 +1,4 @@
-import { AppBar, Box, Button, Drawer, IconButton, InputBase, Toolbar, Typography } from "@mui/material";
-import NavListDrawer from "./NavListDrawer";
-import MenuIcon from '@mui/icons-material/Menu';
+import { AppBar, Box, Button, Drawer, IconButton, InputBase, Toolbar} from "@mui/material";
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
@@ -98,13 +96,6 @@ export default function Navbar() {
                     }}><ShoppingCartOutlinedIcon /></Button>
                 </Toolbar>
             </AppBar>
-            <Drawer
-                open={open}
-                anchor="left"
-                onClose={() => setOpen(false)}
-            >
-                <NavListDrawer />
-            </Drawer>
         </>
     )
 }
