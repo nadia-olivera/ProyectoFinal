@@ -52,13 +52,10 @@ function a11yProps(index) {
 export default function NavCategories() {
   const [value, setValue] = React.useState(-1);
 
-  React.useEffect(() => {
-    setValue(-1);
-  }, []);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue === value ? -1 : newValue);
+  const handleTabClick = (index) => {
+    setValue((prevValue) => (prevValue === index ? -1 : index));
   };
+ 
 
   const isClickInsideTab = (event) => {
     const tabContainer = document.querySelector('.tab-container');
@@ -74,6 +71,7 @@ export default function NavCategories() {
     }
     return false;
   };
+  
   
   const handleDocumentClick = (event) => {
     const isClickInsideTabContainer = isClickInsideTab(event);
@@ -104,17 +102,17 @@ export default function NavCategories() {
 
     }}>
       <div className='tab-container'>
-      <Tabs className='tab'  sx={{ bgcolor: 'black' }} value={value} onChange={handleChange} aria-label="icon label tabs example">
-        <Tab sx={{ color: "white" }} icon={<VolumeUpIcon />} label="Audio, DJ e iluminación" {...a11yProps(0)}/>
-        <Tab sx={{ color: "white" }} icon={<FireplaceIcon />} label="Calefactores " {...a11yProps(1)}/>
-        <Tab sx={{ color: "white" }} icon={<SmartToyIcon />} label="Juguetería " {...a11yProps(2)} />
-        <Tab sx={{ color: "white" }} icon={<BlenderIcon />} label="Electrodomésticos" {...a11yProps(3)} />
-        <Tab sx={{ color: "white" }} icon={<PianoIcon />} label="Instrumentos Musicales y Acc" {...a11yProps(4)} />
-        <Tab sx={{ color: "white" }} icon={<TapAndPlayIcon />} label="Celulares" {...a11yProps(5)} />
-        <Tab sx={{ color: "white" }} icon={<LaptopChromebookIcon />} label="Notebook, Pc y Tablet" {...a11yProps(6)} />
-        <Tab sx={{ color: "white" }} icon={<HeadsetMicIcon />} label="Acc. Telefonía e Informática" {...a11yProps(7)} />
-        <Tab sx={{ color: "white" }} icon={<SolarPowerIcon />} label="Solar" {...a11yProps(8)} />
-        <Tab sx={{ color: "white" }} icon={<MiscellaneousServicesIcon />} label="Servicios" {...a11yProps(9)} />
+      <Tabs className='tab'  sx={{ bgcolor: 'black' }} value={value}  aria-label="icon label tabs example">
+        <Tab onClick={() => handleTabClick(0)} sx={{ color: "white" }} icon={<VolumeUpIcon />} label="Audio, DJ e iluminación" {...a11yProps(0)}/>
+        <Tab onClick={() => handleTabClick(1)} sx={{ color: "white" }} icon={<FireplaceIcon />} label="Calefactores " {...a11yProps(1)}/>
+        <Tab onClick={() => handleTabClick(2)} sx={{ color: "white" }} icon={<SmartToyIcon />} label="Juguetería " {...a11yProps(2)} />
+        <Tab onClick={() => handleTabClick(3)} sx={{ color: "white" }} icon={<BlenderIcon />} label="Electrodomésticos" {...a11yProps(3)} />
+        <Tab onClick={() => handleTabClick(4)} sx={{ color: "white" }} icon={<PianoIcon />} label="Instrumentos Musicales y Acc" {...a11yProps(4)} />
+        <Tab onClick={() => handleTabClick(5)} sx={{ color: "white" }} icon={<TapAndPlayIcon />} label="Celulares" {...a11yProps(5)} />
+        <Tab onClick={() => handleTabClick(6)} sx={{ color: "white" }} icon={<LaptopChromebookIcon />} label="Notebook, Pc y Tablet" {...a11yProps(6)} />
+        <Tab onClick={() => handleTabClick(7)} sx={{ color: "white" }} icon={<HeadsetMicIcon />} label="Acc. Telefonía e Informática" {...a11yProps(7)} />
+        <Tab onClick={() => handleTabClick(8)} sx={{ color: "white" }} icon={<SolarPowerIcon />} label="Solar" {...a11yProps(8)} />
+        <Tab onClick={() => handleTabClick(9)} sx={{ color: "white" }} icon={<MiscellaneousServicesIcon />} label="Servicios" {...a11yProps(9)} />
       </Tabs>
       </div>
       <CustomTabPanel className="tabPanel" value={value} index={0}>
@@ -363,7 +361,13 @@ export default function NavCategories() {
           </Grid>
           <Grid item  xs={6} md={8}>
           <ListItem button>
-          <ListItemText  primary="Arreglo de Celulares" />
+          <ListItemText  primary="Reparación de PC" />
+          </ListItem>
+          <ListItem button>
+          <ListItemText  primary="Reparación de Celulares" />
+          </ListItem>
+          <ListItem button>
+          <ListItemText  primary="Reparación de impresoras" />
           </ListItem>          
           </Grid>
           </Grid>          
