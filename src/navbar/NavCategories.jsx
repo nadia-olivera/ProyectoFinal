@@ -363,9 +363,11 @@ export default function NavCategories() {
           <ListItem button>
           <ListItemText  primary="Reparación de PC" />
           </ListItem>
+          <Divider sx={{ bgcolor: "white" }} />
           <ListItem button>
           <ListItemText  primary="Reparación de Celulares" />
           </ListItem>
+          <Divider sx={{ bgcolor: "white" }} />
           <ListItem button>
           <ListItemText  primary="Reparación de impresoras" />
           </ListItem>          
