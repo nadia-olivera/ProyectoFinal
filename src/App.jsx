@@ -5,7 +5,6 @@ import Footer from "./components/Footer";
 import "./css/styles.css"
 import NavCategories from "./navbar/NavCategories";
 
-
 export default function App() {
   return (
     <>
@@ -24,8 +23,7 @@ export default function App() {
             }}>
     
     <Container sx={{overflowX:"hidden"}}>
-    
-        <Box variant="h2" sx={{borderBottom:5,borderColor:"#2ea67b",fontSize:30, mt:5,mb:5}}>Productos destacados</Box>
+        <Box variant="h2" sx={{fontSize:25, mt:5,mb:5}}>Productos destacados</Box>
         <Product />              
       </Container>
       </div>
